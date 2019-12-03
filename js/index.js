@@ -11,7 +11,6 @@ window.addEventListener('keydown', () => {
 
 window.addEventListener('keyup', (event) => {
     hover.style.color = 'red';
-    event.stopPropagation();
 })
 
 let p = document.querySelector('.main-navigation');
@@ -34,7 +33,8 @@ let navLinks = document.querySelectorAll('a')
 
 document.querySelectorAll('.nav-link').forEach(el => {
     el.addEventListener('click', (event) => {
-        el.preventDefault();
+        event.preventDefault();
+        console.log('Stopped Link');
     })
 })
 
