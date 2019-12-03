@@ -1,43 +1,47 @@
 // Your code goes here
 
 const hover = document.querySelector(".logo-heading");
-hover.addEventListener('mouseover', (event) => {
+hover.addEventListener('mouseover', () => {
     hover.style.color = "red";
 })
 
-window.addEventListener('keydown', (event) => {
+window.addEventListener('keydown', () => {
     hover.style.color = "black";
 })
 
-window.addEventListener('wheel', (event) => {
-    alert("Down or Up the wheel?");
+window.addEventListener('keyup', (event) => {
+    hover.style.color = 'red';
+    event.stopPropagation();
 })
 
-window.addEventListener('drag / drop', (event) => {
-    alert("Filler Text");
+let p = document.querySelector('.main-navigation');
+window.addEventListener('wheel', () => {
+    p.classList.add('hidden');
 })
 
-let whole = document.querySelector(".intro");
-whole.addEventListener('load', (event) => {
-    event.style.display = "none";
+window.addEventListener('resize', () => {
+    alert('Alert Incoming');
 })
 
-let focusing = document.querySelector(".btn");
-focusing.addEventListener('focus', (event) => {
-    event.style.display = "none";
+
+const allP = document.querySelector('p');
+allP.addEventListener('mouseenter', () => {
+    allP.style.color = 'blue';
 })
 
-let nav = document.querySelector(".nav-link").addEventListener("click", function (event) {
-    event.preventDefault();
-});
-
-window.addEventListener("scroll", (event) => {
-    alert("Scroll test");
+let nav = document.querySelector("a");
+let navLinks = document.querySelectorAll('a')
+navLinks.forEach(element => {
+    element.preventDefault;
 })
 
-let selector = document.getElementsByTagName("p");
-selector[0].addEventListener('select', (event) => {
-    event.style.color = "blue";
+window.addEventListener("scroll", () => {
+    nav.style.color = "red";
+})
+
+let selector = document.querySelector("a");
+selector.addEventListener('select', () => {
+    selector.innerHTML = "Hello There"
 })
 
 window.addEventListener("dblclick", (event) => {
