@@ -31,8 +31,11 @@ allP.addEventListener('mouseenter', () => {
 
 let nav = document.querySelector("a");
 let navLinks = document.querySelectorAll('a')
-navLinks.forEach(element => {
-    element.preventDefault;
+
+document.querySelectorAll('.nav-link').forEach(el => {
+    el.addEventListener('click', (event) => {
+        el.preventDefault();
+    })
 })
 
 window.addEventListener("scroll", () => {
