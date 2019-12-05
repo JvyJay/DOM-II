@@ -1,7 +1,18 @@
 // Your code goes here
 
+const btnContainer = document.querySelector('.destination');
+btnContainer.addEventListener('click', () => {
+    alert('CONTAINER CLICKED');
+})
+
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', (event) => {
+    alert('BTN CLICK');
+    event.stopPropagation();
+})
+
 const hover = document.querySelector(".logo-heading");
-hover.addEventListener('mouseover', () => {
+hover.addEventListener('mouseover', (event) => {
     hover.style.color = "red";
 })
 
@@ -9,8 +20,8 @@ window.addEventListener('keydown', () => {
     hover.style.color = "black";
 })
 
-window.addEventListener('keyup', (event) => {
-    hover.style.color = 'red';
+window.addEventListener('keyup', () => {
+    hover.style.color = 'green';
 })
 
 let p = document.querySelector('.main-navigation');
@@ -23,8 +34,8 @@ window.addEventListener('resize', () => {
 })
 
 
-const allP = document.querySelector('p');
-allP.addEventListener('mouseenter', () => {
+const allP = document.querySelector('p')
+allP.addEventListener('mouseenter', (event) => {
     allP.style.color = 'blue';
 })
 
@@ -42,11 +53,7 @@ window.addEventListener("scroll", () => {
     nav.style.color = "red";
 })
 
-let selector = document.querySelector("a");
-selector.addEventListener('select', () => {
-    selector.innerHTML = "Hello There"
-})
-
 window.addEventListener("dblclick", (event) => {
     alert("Double Click Test");
+    event.stopPropagation();
 })
